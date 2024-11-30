@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+# I love a challenge!
+What will the next challenge be?
 <!--
 **luckyphil122/luckyphil122** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
