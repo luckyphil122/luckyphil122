@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ page.meta.title or config.site_name }}</title>
+<meta name="description" content="{{ page.meta.description or config.site_description }}" />
+<meta property="og:title" content="{{ page.meta.title or config.site_name }}" />
+<meta property="og:description" content="{{ page.meta.description or config.site_description }}" />
+<meta property="og:image" content="/images/openafterhours_icon_512.png" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="/images/openafterhours_icon_512.png" />
+<link rel="stylesheet" href="/stylesheets/colors_and_type.css" />
+<link rel="stylesheet" href="/stylesheets/page.css" />
+</head>
+<body>
+
+<article class="lp lp-dispatch">
+  <header class="top">
+    <div class="l">{{ page.meta.issue }}</div>
+    <div class="masthead">{{ page.meta.masthead_lead }} <span class="amp">&amp;</span> {{ page.meta.masthead_tail }}</div>
+    <div class="r">{{ page.meta.dateline }}</div>
+  </header>
+
+  <div class="meta-row">
+    <span>{{ page.meta.tagline }}</span>
+    <span><span class="dot-sep">&bull;</span> {{ page.meta.cadence }}</span>
+  </div>
+
+  <section class="lead-section">
+    <div class="lead-side">
+      <div class="owl-mark"><img src="/images/openafterhours_icon_512.png" alt="OpenAfterHours owl"/></div>
+      <div style="height: 24px"></div>
+      <div class="now-card">
+        <h4>// Now</h4>
+        <ul>
+          {% for n in page.meta.now %}
+          <li>{{ n }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="lead-main">
+      <div class="deck">{{ page.meta.deck }}</div>
+      <h1>{{ page.meta.headline_lead }} <em>{{ page.meta.headline_emphasis }}</em>{{ page.meta.headline_tail }}</h1>
+      <p class="lede">{{ page.meta.intro_long }}</p>
+      <p class="lede" style="margin-top: 14px">{{ page.meta.intro_coda }}</p>
+      <div class="byline">
+        <span><strong>BY</strong> &middot; {{ page.meta.byline }}</span>
+        <span><strong>FILED</strong> &middot; <span id="filed-date"></span></span>
+        <span><strong>READ</strong> &middot; {{ page.meta.read_time }}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="columns">
+    {% for b in page.meta.beliefs %}
+    <div class="col">
+      <div class="num">&sect; {{ b.n }}</div>
+      <h3>{{ b.head }}</h3>
+      <p>{{ b.body }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="feature">
+    <div class="fl">
+      <div class="deck">Feature &middot; Project on file</div>
+      <h2>{{ page.meta.project.name }}</h2>
+      <p class="sell">{{ page.meta.project.tagline }}</p>
+      <ul>
+        {% for b in page.meta.project.bullets %}
+        <li><b>{{ b.label }}.</b> {{ b.body }}</li>
+        {% endfor %}
+      </ul>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn btn-primary" href="{{ page.meta.project.repo_url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        <a class="btn btn-ghost" href="{{ page.meta.project.repo_url }}#readme" target="_blank" rel="noopener">Read the docs</a>
+      </div>
+    </div>
+    <div class="fr">
+      <div class="formula-bg">
+        {% for f in page.meta.formula_scatter %}
+        <span class="formula" style="top: {{ f.top }}; left: {{ f.left }}; font-size: {{ f.fs }}px; transform: rotate({{ f.rot }}deg);">{{ f.text }}</span>
+        {% endfor %}
+      </div>
+      <div class="panel">
+        <h4>// quickstart.py</h4>
+        <div class="term">
+          <div><span class="o">from</span> <span class="c">rwa_calc</span> <span class="o">import</span> <span class="c">CreditRiskCalc</span></div>
+          <div>&nbsp;</div>
+          <div><span class="c">result</span> <span class="o">=</span> <span class="a">CreditRiskCalc</span>(</div>
+          <div>&nbsp;&nbsp;<span class="c">framework</span><span class="o">=</span><span class="a">"basel_3_1"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="c">approach</span><span class="o">=</span><span class="a">"f_irb"</span>,</div>
+          <div>).<span class="a">calculate</span>(<span class="c">exposures</span>)</div>
+          <div>&nbsp;</div>
+          <div><span class="o">$</span> <span class="p">&rarr;</span> <span class="o">RWA computed in 1.42s &middot; 12M rows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest">
+    <h2>Recent dispatches <span class="small">// archive {% if page.meta.posts %}{% else %}&middot; coming soon{% endif %}</span></h2>
+    {% if page.meta.posts %}
+      {% for p in page.meta.posts %}
+        <a href="{{ p.url }}" class="post">
+          <span class="date">{{ p.date }}</span>
+          <span class="kicker">{{ p.kicker }}</span>
+          <span class="title">{{ p.title }}</span>
+          <span class="read">{{ p.read }}</span>
+        </a>
+      {% endfor %}
+    {% else %}
+      <div style="padding: 24px 0; border-top: 1px solid rgba(26,26,46,.15); border-bottom: 1px solid rgba(26,26,46,.15); font-family: var(--font-mono); font-size: 13px; color: var(--oah-slate-400); text-align: center; letter-spacing: 0.06em;">
+        &#9790; The first dispatch is in draft. Subscribe via RSS or check back shortly.
+      </div>
+    {% endif %}
+  </section>
+
+  <footer class="strap">
+    <div>{{ config.copyright | safe }} &middot; Set in Space Grotesk &middot; Inter &middot; JetBrains Mono</div>
+    <div>
+      {% for l in page.meta.links %}
+      <a href="{{ l.url }}"{% if l.external %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>
+      {% endfor %}
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('filed-date').textContent =
+    new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+</script>
+</body>
+</html>
