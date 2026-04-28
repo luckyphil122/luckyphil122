@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{{ page.title }} · OpenAfterHours</title>
 <meta name="description" content="{{ page.meta.description or page.title }}" />
-<link rel="icon" href="/images/openafterhours_icon_512.png" />
-<link rel="stylesheet" href="/stylesheets/colors_and_type.css" />
-<link rel="stylesheet" href="/stylesheets/page.css" />
+<link rel="icon" href="{{ config.theme.favicon | url }}" />
+{% for path in config.extra_css %}
+<link rel="stylesheet" href="{{ path | url }}" />
+{% endfor %}
 <style>
   /* Post-only layout, intentionally narrow editorial column. */
   body { background: #f8f5ee; color: var(--oah-ink); }
@@ -90,8 +91,8 @@
 
 <div class="post-shell">
   <header class="post-strap-top">
-    <a class="home" href="/">The After-Hours <span class="amp">&amp;</span> Co.</a>
-    <a href="/dispatches/">&larr; All dispatches</a>
+    <a class="home" href="{{ '.' | url }}">The After-Hours <span class="amp">&amp;</span> Co.</a>
+    <a href="{{ 'dispatches/' | url }}">&larr; All dispatches</a>
   </header>
 
   <article>
