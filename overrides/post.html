@@ -43,6 +43,12 @@
     padding-bottom: 24px; border-bottom: 1px solid rgba(26,26,46,.18);
   }
   .post-shell .byline strong { color: var(--oah-ink); font-weight: 600; }
+  .post-shell .byline .avatar {
+    width: 24px; height: 24px; border-radius: 50%;
+    vertical-align: -7px; margin-right: 6px;
+    border: 1px solid rgba(26,26,46,.18);
+    object-fit: cover;
+  }
   .post-shell .body { font-size: 18px; line-height: 1.6; color: var(--oah-ink); }
   .post-shell .body p { margin: 0 0 1.1em; }
   .post-shell .body h2 {
@@ -99,7 +105,7 @@
     {% if page.meta.kicker %}<div class="deck">{{ page.meta.kicker }}</div>{% endif %}
     <h1>{{ page.title }}</h1>
     <div class="byline">
-      {% if page.meta.author %}<span><strong>BY</strong> &middot; {{ page.meta.author }}</span>{% endif %}
+      <span><strong>BY</strong> &middot; <img class="avatar" src="{{ 'images/maintainer_avatar.png' | url }}" alt="{{ page.meta.author or config.site_author }}" /> {{ page.meta.author or config.site_author }}</span>
       {% if page.meta.date %}<span><strong>FILED</strong> &middot; {{ page.meta.date }}</span>{% endif %}
       {% if page.meta.read %}<span><strong>READ</strong> &middot; {{ page.meta.read }}</span>{% endif %}
     </div>
