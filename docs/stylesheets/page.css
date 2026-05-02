@@ -436,6 +436,12 @@ body {
   display: flex; gap: 24px;
 }
 .lp-dispatch .lead-section .byline strong { color: var(--oah-ink); font-weight: 600; }
+.lp-dispatch .lead-section .byline .avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  vertical-align: -7px; margin-right: 6px;
+  border: 1px solid rgba(26,26,46,.18);
+  object-fit: cover;
+}
 
 .lp-dispatch .lead-side .now-card {
   border: 1px solid var(--oah-ink); border-radius: 6px;

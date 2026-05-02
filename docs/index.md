@@ -72,7 +72,7 @@ project:
   bullets:
     - { label: "Standardised + IRB", body: "F-IRB and A-IRB on top of the Standardised Approach." }
     - { label: "Polars-fast",        body: "50–100× over the equivalent pandas pipeline." }
-    - { label: "~1,915 tests",       body: "Cross-checked against the regulator's worked examples." }
+    - { label: "c5,000 tests",       body: "Cross-checked against the regulator's worked examples." }
     - { label: "PRA PS1/26",         body: "Tracking the Basel 3.1 transposition for UK firms." }
 
 # 8 formulas with their scatter positions, in render order.
@@ -87,8 +87,16 @@ formula_scatter:
   - { text: "EL = PD × LGD",                                                         top: "54%", left: "50%", fs: 10, rot:  1.5 }
   - { text: "RW = K × 12.5 × MA",                                                    top: "60%", left: "78%", fs: 12, rot: -2.5 }
 
-# Recent dispatches — leave empty until the first post is filed.
-posts: []
+# Recent dispatches — newest first.
+posts:
+  - { url: "dispatches/2026-08-04-what-i-got-wrong-whats-next/",                     date: "2026-08-04", kicker: "Part 8", title: "What I Got Wrong, What's Next",                            read: "11 min" }
+  - { url: "dispatches/2026-07-21-testing-a-regulatory-engine/",                     date: "2026-07-21", kicker: "Part 7", title: "Testing a Regulatory Engine",                              read: "13 min" }
+  - { url: "dispatches/2026-07-07-crm-mofs-and-other-edge-case-archaeology/",        date: "2026-07-07", kicker: "Part 6", title: "CRM, MOFs, and Other Edge-Case Archaeology",               read: "14 min" }
+  - { url: "dispatches/2026-06-23-the-output-floor-and-why-basel-31-bites/",         date: "2026-06-23", kicker: "Part 5", title: "The Output Floor and Why Basel 3.1 Bites",                 read: "14 min" }
+  - { url: "dispatches/2026-06-09-building-with-an-agent-swarm/",                    date: "2026-06-09", kicker: "Part 4", title: "Building With an Agent Swarm",                             read: "13 min" }
+  - { url: "dispatches/2026-05-26-risk-weights-are-not-a-lookup-table/",             date: "2026-05-26", kicker: "Part 3", title: "Risk Weights Are Not a Lookup Table",                      read: "13 min" }
+  - { url: "dispatches/2026-05-12-the-pipeline/",                                    date: "2026-05-12", kicker: "Part 2", title: "The Pipeline: Why Regulation Forced an Immutable Design",  read: "12 min" }
+  - { url: "dispatches/2026-04-28-building-a-uk-basel-31-rwa-calculator-in-public/", date: "2026-04-28", kicker: "Part 1", title: "Building a UK Basel 3.1 RWA Calculator in Public",         read: "5 min" }
 
 # Footer links
 links:
