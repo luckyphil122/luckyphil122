@@ -7,7 +7,7 @@ description: A personal dispatch from the maintainer of OpenAfterHours — open-
 issue: "№ 001 · Vol. I · 2026"
 masthead_lead: The After-Hours
 masthead_tail: Co.
-dateline: London · GMT · MIT licensed
+dateline: Edinburgh · GMT · MIT licensed
 
 # Meta-row
 tagline: A personal dispatch from the maintainer of OpenAfterHours
@@ -27,7 +27,7 @@ intro_long: >-
 intro_coda: >-
   A parallel practice, kept honest by being open, and kept warm by being
   shared.
-byline: The Maintainer
+byline: The Maintainer - Phil
 read_time: 4 min
 
 # // Now strip

@@ -3,7 +3,7 @@ template: post.html
 title: Dispatches
 description: All dispatches from the maintainer of OpenAfterHours.
 kicker: Archive
-author: The Maintainer
+author: The Maintainer - Phil
 ---
 
 Notes on the experience of building this UK Credit Risk RWA Calculator — the regulation, the engineering, and what it has been like driving the work largely through a swarm of Claude Code agents.
